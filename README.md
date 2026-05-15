@@ -151,4 +151,4 @@ Whether it's a quick typo fix, a fresh resource,
 a doc polish, or a sweeping overhaul â€” every contribution helps this list grow.
 Jump in and join the community â€” PRs of every size are welcome.<br>
 
-ðŸ“ [Read the contributing guide](CONTRIBUTING.md) Â· ðŸ› [good first issues](https://github.com/natnew/awesome-recursive-language-models/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22)
+[Read the contributing guide](CONTRIBUTING.md) [good first issues](https://github.com/natnew/awesome-recursive-language-models/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22)
