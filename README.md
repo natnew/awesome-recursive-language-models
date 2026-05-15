@@ -25,6 +25,7 @@ Recursive systems matter because they allow models and agents to decompose conte
 
 ## Core Papers
 
+- [Recursive Language Models](https://arxiv.org/abs/2512.24601) - Introduces RLMs as an inference strategy where an LLM uses an external environment to inspect, decompose, and recursively call itself over long prompts. (2025)
 - [Recursive Models for Long-Horizon Reasoning](https://arxiv.org/abs/2603.02112) - Formalises recursive model self-invocation for long-horizon reasoning under bounded context and evaluates recursive reasoning on Boolean satisfiability. (2026)
 - [Recursion of Thought: A Divide-and-Conquer Approach to Multi-Context Reasoning with Language Models](https://arxiv.org/abs/2306.06891) - Introduces recursive multi-context reasoning where model outputs can trigger subproblem contexts beyond a single sequence window. (2023)
 - [Tree of Thoughts: Deliberate Problem Solving with Large Language Models](https://arxiv.org/abs/2305.10601) - Frames reasoning as search over intermediate "thought" states with generation, self-evaluation, and selection. (2023)
@@ -35,6 +36,7 @@ Recursive systems matter because they allow models and agents to decompose conte
 
 See the core papers above for recursive self-invocation and multi-context recursion.
 
+- [Recursive Language Models](https://alexzhang13.github.io/blog/2025/rlm/) - Project blog post explaining RLMs, REPL environments, recursive subcalls, and early long-context experiments. (2025)
 - [RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval](https://arxiv.org/abs/2401.18059) - Builds a recursive tree of clustered summaries so retrieval can operate over both local chunks and higher-level abstractions. (2024)
 
 ## Recursive Reasoning Architectures
@@ -45,6 +47,8 @@ See Tree of Thoughts in the core papers for the canonical tree-search framing.
 - [Algorithm of Thoughts: Enhancing Exploration of Ideas in Large Language Models](https://arxiv.org/abs/2308.10379) - Prompts models with algorithmic reasoning trajectories to encourage structured exploration with recurrent dynamics. (2023)
 - [Cumulative Reasoning with Large Language Models](https://arxiv.org/abs/2308.04371) - Coordinates proposer, verifier, reporter, and halter roles in an iterative reasoning process. (2023)
 - [Everything of Thoughts: Defying the Law of Penrose Triangle for Thought Generation](https://arxiv.org/abs/2311.04254) - Combines thought generation with reinforcement learning and Monte Carlo Tree Search for multi-solution problem solving. (2023)
+- [THREAD: Thinking Deeper with Recursive Spawning](https://aclanthology.org/2025.naacl-long.427/) - Frames generation as threads that recursively spawn child threads for task solving and question answering. (2025)
+- [Less is More: Recursive Reasoning with Tiny Networks](https://arxiv.org/abs/2510.04871) - Proposes Tiny Recursive Model, a small-network architecture that recursively refines latent state and answers on puzzle tasks. (2025)
 
 ## Inference-Time Recursion
 
@@ -81,6 +85,8 @@ See STOP in the core papers for recursively self-improving code-generation scaff
 - [Toward Self-Improvement of LLMs via Imagination, Searching, and Criticizing](https://arxiv.org/abs/2404.12253) - Combines generated candidate reasoning paths, search, and critique for self-improvement without extra annotations. (2024)
 - [ReGenesis: LLMs can Grow into Reasoning Generalists via Self-Improvement](https://arxiv.org/abs/2410.02108) - Uses self-synthesised reasoning paths as training data to improve reasoning generalisation. (2024)
 - [Goedel Agent: A Self-Referential Agent Framework for Recursive Self-Improvement](https://arxiv.org/abs/2410.04444) - Proposes a self-referential agent framework for recursively modifying its own behaviour. (2024)
+- [LADDER: Self-Improving LLMs through Recursive Problem Decomposition](https://arxiv.org/abs/2503.00735) - Uses recursive generation of easier problem variants to create a difficulty gradient for self-guided learning and test-time reinforcement learning. (2025)
+- [A Simple Framework for Intrinsic Reward-Shaping for RL using LLM Feedback](https://alexzhang13.github.io/assets/pdfs/Reward_Shaping_LLM.pdf) - Iteratively generates and refines intrinsic reward functions with LLM feedback for reinforcement learning environments. (2025)
 - [AlphaEvolve: A coding agent for scientific and algorithmic discovery](https://arxiv.org/abs/2506.13131) - Describes an evolutionary coding agent that uses LLMs, automated evaluators, and iterative programme improvement. (2025)
 
 ## Benchmarks and Evaluation Tasks
@@ -88,6 +94,7 @@ See STOP in the core papers for recursively self-improving code-generation scaff
 - [PRM800K](https://github.com/openai/prm800k) - OpenAI's process-supervision dataset of step-level feedback labels for mathematical reasoning. (2023)
 - [SWE-bench](https://www.swebench.com/) - A software-engineering benchmark frequently used to study agent loops, retries, verification, and inference-time scaling. (2023)
 - [WebShop](https://github.com/princeton-nlp/WebShop) - A simulated e-commerce environment used by ReAct and LATS for action-observation agent evaluation. (2022)
+- [BrowseComp-Plus](https://arxiv.org/abs/2508.06600) - A fixed-corpus benchmark for evaluating deep-research agents, retrieval, citation accuracy, and context-engineering choices under controlled conditions. (2025)
 
 ## Open-Source Implementations
 
@@ -97,6 +104,8 @@ See STOP in the core papers for recursively self-improving code-generation scaff
 - [noahshinn/reflexion](https://github.com/noahshinn/reflexion) - Official Reflexion implementation for verbal reinforcement learning in language agents. (2023)
 - [parthsarthi03/raptor](https://github.com/parthsarthi03/raptor) - Official RAPTOR implementation for recursive tree-organised retrieval. (2024)
 - [maitrix-org/llm-reasoners](https://github.com/maitrix-org/llm-reasoners) - Library for advanced reasoning algorithms, including planning-style and tree-search methods. (2023)
+- [alexzhang13/rlm](https://github.com/alexzhang13/rlm) - Official RLM inference library with REPL and sandbox environments for recursive language-model calls. (2026)
+- [alexzhang13/rlm-minimal](https://github.com/alexzhang13/rlm-minimal) - Minimal reference implementation of RLMs with REPL environments for experimentation. (2026)
 
 ## Contributing
 
@@ -110,5 +119,4 @@ a doc polish, or a sweeping overhaul — every contribution helps this list grow
 Jump in and join the community — PRs of every size are welcome.<br>
 
 📝 [Read the contributing guide](CONTRIBUTING.md) · 🐛 [good first issues](https://github.com/natnew/awesome-recursive-language-models/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22)
-
 
