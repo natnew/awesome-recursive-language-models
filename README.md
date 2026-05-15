@@ -12,13 +12,13 @@ Recursive systems matter because they allow models and agents to decompose conte
 
 | Pattern | Description | Example resources |
 | --- | --- | --- |
-| Self-recursive inference | Model calls itself on bounded sub-contexts. | RLM, lambda-RLM |
+| Self-recursive inference | Model calls itself on bounded sub-contexts. | RLM, λ-RLM |
 | Tree recursion | Expands and evaluates branches. | ToT, LATS, MCTS methods |
 | Graph recursion | Reasoning states form reusable graph structures. | GoT |
 | Iterative refinement | Output-feedback-revision loops. | Self-Refine, Reflexion |
 | Recursive architectures | Recurrent or weight-shared reasoning modules. | HRM, TRM, RSM |
 | Recursive retrieval | Hierarchical abstraction over context. | RAPTOR |
-| Recursive self-improvement | System modifies policy, code, prompts, or search process. | STOP, Goedel Agent, Polaris |
+| Recursive self-improvement | System modifies policy, code, prompts, or search process. | STOP, Gödel Agent, Polaris |
 | Simulation recursion | Agents recursively plan, reflect, update beliefs, and interact. | Generative Agents, AgentSociety, SOTOPIA |
 
 ## Contents
@@ -53,7 +53,7 @@ Recursive systems matter because they allow models and agents to decompose conte
 See the core papers above for recursive self-invocation and multi-context recursion.
 
 - [Recursive Language Models](https://alexzhang13.github.io/blog/2025/rlm/) - Project blog post explaining RLMs, REPL environments, recursive subcalls, and early long-context experiments. (2025)
-- [The Y-Combinator for LLMs: Solving Long-Context Rot with Lambda-Calculus](https://arxiv.org/abs/2603.20105) - Introduces lambda-RLM, a typed functional approach to recursive language-model inference with explicit control flow, termination guarantees, and cost bounds. (2026)
+- [The Y-Combinator for LLMs: Solving Long-Context Rot with Lambda-Calculus](https://arxiv.org/abs/2603.20105) - Introduces λ-RLM, a typed functional approach to recursive language-model inference with explicit control flow, termination guarantees, and cost bounds. (2026)
 - [RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval](https://arxiv.org/abs/2401.18059) - Builds a recursive tree of clustered summaries so retrieval can operate over both local chunks and higher-level abstractions. (2024)
 
 ## Recursive Reasoning Architectures
@@ -105,8 +105,8 @@ See STOP in the core papers for recursively self-improving code-generation scaff
 
 - [Toward Self-Improvement of LLMs via Imagination, Searching, and Criticizing](https://arxiv.org/abs/2404.12253) - Combines generated candidate reasoning paths, search, and critique for self-improvement without extra annotations. (2024)
 - [ReGenesis: LLMs can Grow into Reasoning Generalists via Self-Improvement](https://arxiv.org/abs/2410.02108) - Uses self-synthesised reasoning paths as training data to improve reasoning generalisation. (2024)
-- [Goedel Agent: A Self-Referential Agent Framework for Recursive Self-Improvement](https://arxiv.org/abs/2410.04444) - Proposes a self-referential agent framework for recursively modifying its own behaviour. (2024)
-- [Polaris: A Goedel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair](https://arxiv.org/abs/2603.23129) - Proposes an auditable recursive self-improvement loop where an agent analyses failures, abstracts experience, and applies minimal policy repairs. (2026)
+- [Gödel Agent: A Self-Referential Agent Framework for Recursive Self-Improvement](https://arxiv.org/abs/2410.04444) - Proposes a self-referential agent framework for recursively modifying its own behaviour. (2024)
+- [Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair](https://arxiv.org/abs/2603.23129) - Proposes an auditable recursive self-improvement loop where an agent analyses failures, abstracts experience, and applies minimal policy repairs. (2026)
 - [LADDER: Self-Improving LLMs through Recursive Problem Decomposition](https://arxiv.org/abs/2503.00735) - Uses recursive generation of easier problem variants to create a difficulty gradient for self-guided learning and test-time reinforcement learning. (2025)
 - [A Simple Framework for Intrinsic Reward-Shaping for RL using LLM Feedback](https://alexzhang13.github.io/assets/pdfs/Reward_Shaping_LLM.pdf) - Iteratively generates and refines intrinsic reward functions with LLM feedback for reinforcement learning environments. (2025)
 - [AlphaEvolve: A coding agent for scientific and algorithmic discovery](https://arxiv.org/abs/2506.13131) - Describes an evolutionary coding agent that uses LLMs, automated evaluators, and iterative programme improvement. (2025)
@@ -139,6 +139,8 @@ See STOP in the core papers for recursively self-improving code-generation scaff
 - [maitrix-org/llm-reasoners](https://github.com/maitrix-org/llm-reasoners) - Library for advanced reasoning algorithms, including planning-style and tree-search methods. (2023)
 - [alexzhang13/rlm](https://github.com/alexzhang13/rlm) - Official RLM inference library with REPL and sandbox environments for recursive language-model calls. (2026)
 - [alexzhang13/rlm-minimal](https://github.com/alexzhang13/rlm-minimal) - Minimal reference implementation of RLMs with REPL environments for experimentation. (2026)
+- [lambda-calculus-LLM/lambda-RLM](https://github.com/lambda-calculus-LLM/lambda-RLM) - Official implementation of λ-RLM for typed recursive language-model inference. (2026)
+- [Jasmine0201/GASim](https://github.com/Jasmine0201/GASim) - Official implementation of GASim for graph-accelerated hybrid social simulation. (2026)
 
 ## Contributing
 
@@ -152,3 +154,4 @@ a doc polish, or a sweeping overhaul â€” every contribution helps this list
 Jump in and join the community â€” PRs of every size are welcome.<br>
 
 [Read the contributing guide](CONTRIBUTING.md) [good first issues](https://github.com/natnew/awesome-recursive-language-models/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22)
+
