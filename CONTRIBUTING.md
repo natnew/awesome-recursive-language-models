@@ -2,6 +2,22 @@
 
 Thank you for helping keep this list focused and useful.
 
+## How to Contribute
+
+- **Suggest a resource** — open an issue using the
+  [Suggest a resource](https://github.com/natnew/awesome-recursive-language-models/issues/new?template=suggest-resource.yml)
+  form. It collects everything needed to vet the resource against this document.
+- **Report a broken link** — use the
+  [Broken link](https://github.com/natnew/awesome-recursive-language-models/issues/new?template=broken-link.yml)
+  form.
+- **Open a pull request** — add the entry yourself following the rules below. The PR
+  template includes the quality checklist, and CI validates formatting, Markdown style,
+  awesome-list compliance, and link integrity.
+
+This repository also ships an agent-assisted curation pipeline (discovery, vetting,
+review, and audit agents) described in [`AGENTS.md`](AGENTS.md); it applies the same
+rules in this document.
+
 ## Purpose
 
 This repository curates high-signal resources on recursive language models, recursive inference, recursive reasoning architectures, self-calling AI systems, and adjacent work where recursion is central to the method.
@@ -82,7 +98,7 @@ Example:
 
 Before submitting, confirm:
 
-- The resource is within the four-year window or clearly marked as historical context.
+- The resource is within the inclusion time window (15 May 2022 onwards) or clearly marked as historical context.
 - The link works.
 - The title matches the linked page.
 - The description is accurate.
@@ -106,6 +122,25 @@ Do not add:
 - resources whose date cannot be verified;
 - resources whose claims cannot be matched to the linked source.
 
+## Validation
+
+Before opening a pull request, run the same checks CI runs:
+
+```bash
+npm ci                 # install dev tooling
+npm run lint           # markdownlint
+npm run lint:awesome   # awesome-list compliance for README.md
+npm test               # link check (linkinator)
+```
+
+All three checks must pass. Keep diffs minimal: `README.md` and this file are
+hand-curated and must not be wholesale reformatted.
+
 ## Review Standard
 
 This list should remain concise, technically credible, and research-oriented. A smaller set of well-verified resources is preferable to broad coverage with weak relevance.
+
+## Licensing
+
+This repository is released under [CC0 1.0](LICENSE). By contributing, you agree that
+your contributions are released under the same terms.

@@ -1,25 +1,11 @@
-﻿# Awesome Recursive Language Models
+﻿# Awesome Recursive Language Models [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![Scope: Recursive AI Systems](https://img.shields.io/badge/scope-recursive%20AI%20systems-blue)](#awesome-recursive-language-models)
-[![Updated: 2026](https://img.shields.io/badge/updated-2026-brightgreen)](#awesome-recursive-language-models)
+[![Scope: Recursive AI Systems](https://img.shields.io/badge/scope-recursive%20AI%20systems-blue)](https://github.com/natnew/awesome-recursive-language-models)
+[![Updated: 2026](https://img.shields.io/badge/updated-2026-brightgreen)](https://github.com/natnew/awesome-recursive-language-models/commits/main)
 
 > Resources on recursive language models, recursive inference, recursive reasoning architectures, and self-calling AI systems.
 
 Recursive systems matter because they allow models and agents to decompose context, call sub-processes, refine intermediate outputs, verify assumptions, and organise longer-horizon computation.
-
-## Taxonomy
-
-| Pattern | Description | Example resources |
-| --- | --- | --- |
-| Self-recursive inference | Model calls itself on bounded sub-contexts. | RLM, λ-RLM |
-| Tree recursion | Expands and evaluates branches. | ToT, LATS, MCTS methods |
-| Graph recursion | Reasoning states form reusable graph structures. | GoT |
-| Iterative refinement | Output-feedback-revision loops. | Self-Refine, Reflexion |
-| Recursive architectures | Recurrent or weight-shared reasoning modules. | HRM, TRM, RSM |
-| Recursive retrieval | Hierarchical abstraction over context. | RAPTOR |
-| Recursive self-improvement | System modifies policy, code, prompts, or search process. | STOP, Gödel Agent, Polaris |
-| Simulation recursion | Agents recursively plan, reflect, update beliefs, and interact. | Generative Agents, AgentSociety, SOTOPIA |
 
 ## Contents
 
@@ -35,8 +21,20 @@ Recursive systems matter because they allow models and agents to decompose conte
 - [Simulation Recursion and Social Simulation](#simulation-recursion-and-social-simulation)
 - [Benchmarks and Evaluation Tasks](#benchmarks-and-evaluation-tasks)
 - [Open-Source Implementations](#open-source-implementations)
-- [Contributing](#contributing)
 - [Maintainer Notes](#maintainer-notes)
+
+## Taxonomy
+
+| Pattern                    | Description                                                     | Example resources                        |
+| -------------------------- | --------------------------------------------------------------- | ---------------------------------------- |
+| Self-recursive inference   | Model calls itself on bounded sub-contexts.                     | RLM, λ-RLM                               |
+| Tree recursion             | Expands and evaluates branches.                                 | ToT, LATS, MCTS methods                  |
+| Graph recursion            | Reasoning states form reusable graph structures.                | GoT                                      |
+| Iterative refinement       | Output-feedback-revision loops.                                 | Self-Refine, Reflexion                   |
+| Recursive architectures    | Recurrent or weight-shared reasoning modules.                   | HRM, TRM, RSM                            |
+| Recursive retrieval        | Hierarchical abstraction over context.                          | RAPTOR                                   |
+| Recursive self-improvement | System modifies policy, code, prompts, or search process.       | STOP, Gödel Agent, Polaris               |
+| Simulation recursion       | Agents recursively plan, reflect, update beliefs, and interact. | Generative Agents, AgentSociety, SOTOPIA |
 
 ## Core Papers
 
@@ -55,6 +53,8 @@ See the core papers above for recursive self-invocation and multi-context recurs
 - [Recursive Language Models](https://alexzhang13.github.io/blog/2025/rlm/) - Project blog post explaining RLMs, REPL environments, recursive subcalls, and early long-context experiments. (2025)
 - [The Y-Combinator for LLMs: Solving Long-Context Rot with Lambda-Calculus](https://arxiv.org/abs/2603.20105) - Introduces λ-RLM, a typed functional approach to recursive language-model inference with explicit control flow, termination guarantees, and cost bounds. (2026)
 - [RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval](https://arxiv.org/abs/2401.18059) - Builds a recursive tree of clustered summaries so retrieval can operate over both local chunks and higher-level abstractions. (2024)
+- [Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions](https://arxiv.org/abs/2212.10509) - Interleaves retrieval and chain-of-thought steps so each retrieval depends on previously derived reasoning in a mutually recursive loop. (2022)
+- [Recursive Language Models Meet Uncertainty: The Surprising Effectiveness of Self-Reflective Program Search for Long Context](https://arxiv.org/abs/2603.15653) - Studies when recursion actually helps RLM-style long-context inference and shows uncertainty-guided self-reflective program search can match or exceed recursive self-calls. (2026)
 
 ## Recursive Reasoning Architectures
 
@@ -68,6 +68,8 @@ See Tree of Thoughts in the core papers for the canonical tree-search framing.
 - [Hierarchical Reasoning Model](https://arxiv.org/abs/2506.21734) - Proposes a recurrent reasoning architecture with high-level and low-level modules operating at different timescales for sequential reasoning tasks. (2025)
 - [Less is More: Recursive Reasoning with Tiny Networks](https://arxiv.org/abs/2510.04871) - Proposes Tiny Recursive Model, a small-network architecture that recursively refines latent state and answers on puzzle tasks. (2025)
 - [Form Follows Function: Recursive Stem Model](https://arxiv.org/abs/2603.15641) - Introduces a recursive reasoning model trained as a stable depth-agnostic transition operator, with test-time recursion and convergence behaviour as a reliability signal. (2026)
+- [Least-to-Most Prompting Enables Complex Reasoning in Large Language Models](https://arxiv.org/abs/2205.10625) - Decomposes problems into progressively harder subproblems whose solutions feed later steps, enabling easy-to-hard generalisation. (2022)
+- [Decomposed Prompting: A Modular Approach for Solving Complex Tasks](https://arxiv.org/abs/2210.02406) - Routes sub-tasks to dedicated prompt handlers that can recursively decompose a task into smaller instances of itself. (2022)
 
 ## Inference-Time Recursion
 
@@ -77,6 +79,7 @@ See Tree of Thoughts in the core papers for the canonical tree-search framing.
 - [Self-Evaluation Guided Beam Search for Reasoning](https://arxiv.org/abs/2305.00633) - Integrates self-evaluation into stochastic beam search for multi-step reasoning. (2023)
 - [What, How, Where, and How Well? A Survey on Test-Time Scaling in Large Language Models](https://arxiv.org/abs/2503.24235) - Surveys test-time scaling methods, including search, verifier-guided reasoning, and adaptive deliberation. (2025)
 - [A Survey of Efficient Reasoning for Large Reasoning Models: Language, Multimodality, and Beyond](https://arxiv.org/abs/2503.21614) - Surveys inefficient reasoning patterns in large reasoning models, including redundant traces, over-analysis, and methods for improving reasoning efficiency. (2025)
+- [Recursive Self-Aggregation Unlocks Deep Thinking in Large Language Models](https://arxiv.org/abs/2509.26626) - Iteratively aggregates subsets of a population of reasoning chains so each round bootstraps improved solutions from partially correct ones. (2025)
 
 ## Recursive Agents and Tool Environments
 
@@ -85,6 +88,7 @@ See Tree of Thoughts in the core papers for the canonical tree-search framing.
 - [Language Agent Tree Search Unifies Reasoning Acting and Planning in Language Models](https://arxiv.org/abs/2310.04406) - Combines reflection, acting, and planning through Monte Carlo Tree Search over agent trajectories. (2024)
 - [Voyager: An Open-Ended Embodied Agent with Large Language Models](https://arxiv.org/abs/2305.16291) - Uses environment feedback, self-verification, and an expanding skill library for lifelong embodied exploration. (2023)
 - [Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761) - Trains models to decide when and how to call tools using self-supervised API-call annotations. (2023)
+- [Tree Search for Language Model Agents](https://arxiv.org/abs/2407.01476) - Applies inference-time best-first tree search over agent actions for exploration and multi-step planning in interactive web environments. (2024)
 
 ## Recursive Evaluation and Verification
 
@@ -92,12 +96,17 @@ See Tree of Thoughts in the core papers for the canonical tree-search framing.
 - [Let's Verify Step by Step](https://arxiv.org/abs/2305.20050) - Compares process supervision with outcome supervision and releases step-level feedback data for mathematical reasoning. (2023)
 - [V-STaR: Training Verifiers for Self-Taught Reasoners](https://arxiv.org/abs/2402.06457) - Iteratively trains reasoners and verifiers from self-generated reasoning data. (2024)
 - [Pride and Prejudice: LLM Amplifies Self-Bias in Self-Refinement](https://arxiv.org/abs/2402.11436) - Examines self-bias risks in self-refinement loops and the role of external feedback. (2024)
+- [CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing](https://arxiv.org/abs/2305.11738) - Validates and progressively revises model outputs through an iterative loop of tool-based critique and correction. (2023)
+- [Generative Verifiers: Reward Modeling as Next-Token Prediction](https://arxiv.org/abs/2408.15240) - Trains verifiers as generators so that verification can itself use chain-of-thought reasoning and majority voting. (2024)
+- [Agent-as-a-Judge: Evaluate Agents with Agents](https://arxiv.org/abs/2410.10934) - Uses agentic systems to evaluate other agents with intermediate feedback across the whole task-solving trajectory. (2024)
 
 ## Recursive Planning and Search
 
 - [Reasoning with Language Model is Planning with World Model](https://arxiv.org/abs/2305.14992) - Uses an LLM as both agent and world model inside Monte Carlo Tree Search for reasoning and planning. (2023)
 - [LiteSearch: Efficacious Tree Search for LLM](https://arxiv.org/abs/2407.00320) - Proposes a tree-search method that allocates expansion based on history and value guidance. (2024)
 - [Monte Carlo Tree Search Boosts Reasoning via Iterative Preference Learning](https://arxiv.org/abs/2405.00451) - Uses MCTS to collect step-level preference data for iterative reasoning improvement. (2024)
+- [Mutual Reasoning Makes Smaller LLMs Stronger Problem-Solvers](https://arxiv.org/abs/2408.06195) - Couples Monte Carlo Tree Search over human-like reasoning actions with a second model that verifies trajectories in a self-play generation-discrimination loop. (2024)
+- [rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking](https://arxiv.org/abs/2501.04519) - Combines MCTS deep thinking with a process reward model and iterative self-evolution rounds that improve both policy and reward models. (2025)
 
 ## RL and Self-Improving Systems
 
@@ -110,6 +119,10 @@ See STOP in the core papers for recursively self-improving code-generation scaff
 - [LADDER: Self-Improving LLMs through Recursive Problem Decomposition](https://arxiv.org/abs/2503.00735) - Uses recursive generation of easier problem variants to create a difficulty gradient for self-guided learning and test-time reinforcement learning. (2025)
 - [A Simple Framework for Intrinsic Reward-Shaping for RL using LLM Feedback](https://alexzhang13.github.io/assets/pdfs/Reward_Shaping_LLM.pdf) - Iteratively generates and refines intrinsic reward functions with LLM feedback for reinforcement learning environments. (2025)
 - [AlphaEvolve: A coding agent for scientific and algorithmic discovery](https://arxiv.org/abs/2506.13131) - Describes an evolutionary coding agent that uses LLMs, automated evaluators, and iterative programme improvement. (2025)
+- [Self-Rewarding Language Models](https://arxiv.org/abs/2401.10020) - Uses the model as its own judge in iterative DPO rounds that improve both instruction following and the quality of self-generated rewards. (2024)
+- [Recursive Introspection: Teaching Language Model Agents How to Self-Improve](https://arxiv.org/abs/2407.18219) - Fine-tunes models to detect and correct their own previous mistakes over successive turns of introspection. (2024)
+- [Automated Design of Agentic Systems](https://arxiv.org/abs/2408.08435) - Introduces Meta Agent Search, where a meta agent iteratively programs ever better agents in code against a growing archive of discoveries. (2024)
+- [Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents](https://arxiv.org/abs/2505.22954) - Evolves an archive of coding agents that iteratively modify their own code, validating each self-modification on coding benchmarks. (2025)
 
 ## Simulation Recursion and Social Simulation
 
@@ -150,8 +163,19 @@ See STOP in the core papers for recursively self-improving code-generation scaff
 
 Thrilled to have you here. <br>
 Whether it's a quick typo fix, a fresh resource,
-a doc polish, or a sweeping overhaul â€” every contribution helps this list grow.
-Jump in and join the community â€” PRs of every size are welcome.<br>
+a doc polish, or a sweeping overhaul — every contribution helps this list grow.
+Jump in and join the community — PRs of every size are welcome.<br>
 
 [Read the contributing guide](CONTRIBUTING.md) [good first issues](https://github.com/natnew/awesome-recursive-language-models/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22)
+
+## Maintainer Notes
+
+This list is maintained with an agent-assisted curation pipeline that ships with the
+repository: `paper-scout` discovers candidate resources, `curate-entry` vets and formats
+them, `entry-reviewer` re-verifies every change, and `taxonomy-auditor` keeps sections and
+coverage healthy. Every change is gated by formatting checks, Markdown lint, awesome-lint,
+and live link validation. See [AGENTS.md](AGENTS.md) for how the pipeline works.
+
+This work is released under [CC0](LICENSE) — to the extent possible under law, the
+maintainers have waived all copyright and related or neighbouring rights.
 
