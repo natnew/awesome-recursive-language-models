@@ -1,0 +1,12 @@
+# Code owners for awesome-recursive-language-models
+# These owners are requested for review on every pull request, including
+# AI-generated PRs. See https://docs.github.com/articles/about-code-owners
+#
+# Order matters: the last matching pattern takes precedence.
+
+# Default owner for everything in the repository
+* @natnew
+
+# Repository tooling and automation
+/.github/ @natnew
+/package.json @natnew

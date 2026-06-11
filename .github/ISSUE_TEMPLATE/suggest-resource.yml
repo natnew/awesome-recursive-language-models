@@ -1,0 +1,72 @@
+name: Suggest a resource
+description: Propose a paper, project, or implementation for the list. It will be vetted against the inclusion criteria in CONTRIBUTING.md.
+title: "[Resource]: "
+labels: ["resource-suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a resource! Please read the
+        [inclusion criteria](https://github.com/natnew/awesome-recursive-language-models/blob/main/CONTRIBUTING.md)
+        first — recursion must be **central** to the method, not incidental.
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: Primary source preferred — arXiv, official project page, official repository, docs, or author/lab page.
+      placeholder: https://arxiv.org/abs/...
+    validations:
+      required: true
+  - type: input
+    id: resource-title
+    attributes:
+      label: Title
+      description: The exact title as shown on the linked page.
+    validations:
+      required: true
+  - type: input
+    id: year
+    attributes:
+      label: Year
+      description: Publication year as verified on the page itself. Resources must be from 15 May 2022 onwards (or clearly marked as historical context).
+      placeholder: "2025"
+    validations:
+      required: true
+  - type: dropdown
+    id: section
+    attributes:
+      label: Proposed section
+      description: Where in the taxonomy does this belong?
+      options:
+        - Core Papers
+        - Recursive Language Models
+        - Recursive Reasoning Architectures
+        - Inference-Time Recursion
+        - Recursive Agents and Tool Environments
+        - Recursive Evaluation and Verification
+        - Recursive Planning and Search
+        - RL and Self-Improving Systems
+        - Simulation Recursion and Social Simulation
+        - Benchmarks and Evaluation Tasks
+        - Open-Source Implementations
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: recursion-centrality
+    attributes:
+      label: Why is recursion central to this resource?
+      description: One or two sentences on the recursive mechanism (self-invocation, tree/graph recursion, iterative refinement, recursive retrieval, self-improvement, simulation recursion, ...). Generic LLM, prompt-engineering, RAG, or agent-framework resources without an explicit recursive mechanism are out of scope.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission checks
+      options:
+        - label: I opened the link and the page loads.
+          required: true
+        - label: The title and year above match what the page itself says.
+          required: true
+        - label: I searched the README for the title, arXiv id, repo name, and common abbreviation — it is not already listed.
+          required: true

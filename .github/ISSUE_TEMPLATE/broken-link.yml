@@ -1,0 +1,29 @@
+name: Report a broken link
+description: An entry in the list points at a dead, moved, or hijacked URL.
+title: "[Broken link]: "
+labels: ["broken-link"]
+body:
+  - type: input
+    id: entry
+    attributes:
+      label: Entry title
+      description: The title of the entry in README.md whose link is broken.
+    validations:
+      required: true
+  - type: input
+    id: broken-url
+    attributes:
+      label: Broken URL
+      placeholder: https://...
+    validations:
+      required: true
+  - type: input
+    id: replacement
+    attributes:
+      label: Suggested replacement URL (optional)
+      description: If the resource moved, the new primary source (per the source hierarchy in CONTRIBUTING.md).
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What happens when you open the link (404, redirect to unrelated content, timeout, ...)?
