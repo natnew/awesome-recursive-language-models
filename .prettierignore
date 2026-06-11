@@ -1,0 +1,12 @@
+# Generated / vendored
+node_modules/
+package-lock.json
+apm.lock.yaml
+reports/
+
+# Local harness / editor state (not repo content)
+.claude/
+
+# Hand-curated documentation — preserve author formatting
+README.md
+CONTRIBUTING.md

@@ -216,3 +216,24 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Node (dev tooling: prettier, markdownlint, linkinator)
+node_modules/
+npm-debug.log*
+
+# agentic files (root-level tooling only — anchored so .github/* paths stay committable)
+/agents/
+/hooks/
+/instructions/
+/plugins/
+/skills/
+/workflows/
+
+# ai-report
+reports/ 
+
+# scrupts
+scripts/
+
+# claude
+.claude/

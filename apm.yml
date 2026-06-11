@@ -1,0 +1,26 @@
+# APM (Agent Package Manager) manifest — https://github.com/microsoft/apm
+# Declares the agent assets that ship with this repository so they can be
+# installed and kept in sync across clients with `apm install`.
+name: awesome-recursive-language-models
+version: 0.0.0
+description: Curated awesome list on recursive language models, with agent tooling for vetting and validating entries.
+
+# Local agent assets provided by this repository.
+agents:
+  - path: .github/agents/curate-entry.agent.md
+  - path: .github/agents/paper-scout.agent.md
+  - path: .github/agents/entry-reviewer.agent.md
+  - path: .github/agents/taxonomy-auditor.agent.md
+
+skills:
+  - path: .github/skills/link-check
+  - path: .github/skills/add-entry
+  - path: .github/skills/coverage-report
+  - path: .github/skills/awesome-lint
+
+# MCP servers available to agents working in this repo.
+mcp:
+  - path: .vscode/mcp.json
+
+# External agent packages this repo depends on (none today).
+dependencies: {}

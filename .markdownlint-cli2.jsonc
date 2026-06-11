@@ -1,0 +1,8 @@
+{
+  // Lint only committed repository content; skip gitignored local tooling
+  // (agents/, skills/, plugins/, instructions/, node_modules/, reports/, ...).
+  "gitignore": true,
+  // Belt-and-suspenders: also exclude vendored/generated dirs explicitly, plus the
+  // hand-curated docs (preserved verbatim — same exclusion as .prettierignore).
+  "ignores": ["node_modules/**", "reports/**", "README.md", "CONTRIBUTING.md"],
+}

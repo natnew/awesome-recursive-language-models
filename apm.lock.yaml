@@ -1,0 +1,24 @@
+# APM lockfile — https://github.com/microsoft/apm
+# Pins the resolved agent-dependency tree, analogous to package-lock.json.
+#
+# This repository declares only LOCAL agent assets (see apm.yml) and has no
+# external APM package dependencies, so the resolved remote tree is empty.
+# CI runs `apm install` to validate and regenerate this file; regenerate it
+# locally with `apm install` whenever apm.yml changes.
+lockfileVersion: 1
+name: awesome-recursive-language-models
+version: 0.0.0
+resolved:
+  agents:
+    - path: .github/agents/curate-entry.agent.md
+    - path: .github/agents/paper-scout.agent.md
+    - path: .github/agents/entry-reviewer.agent.md
+    - path: .github/agents/taxonomy-auditor.agent.md
+  skills:
+    - path: .github/skills/link-check
+    - path: .github/skills/add-entry
+    - path: .github/skills/coverage-report
+    - path: .github/skills/awesome-lint
+  mcp:
+    - path: .vscode/mcp.json
+dependencies: {}

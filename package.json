@@ -1,0 +1,20 @@
+{
+  "name": "awesome-recursive-language-models",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Tooling for the awesome-recursive-language-models curated list: markdown formatting, linting, and link validation.",
+  "license": "CC0-1.0",
+  "scripts": {
+    "build": "prettier --check .",
+    "format": "prettier --write .",
+    "lint": "markdownlint-cli2 \"**/*.md\"",
+    "lint:awesome": "awesome-lint README.md",
+    "test": "linkinator README.md --markdown --skip \"github.com/natnew/awesome-recursive-language-models\""
+  },
+  "devDependencies": {
+    "awesome-lint": "^2.3.0",
+    "linkinator": "^7.6.1",
+    "markdownlint-cli2": "^0.22.1",
+    "prettier": "^3.8.4"
+  }
+}
