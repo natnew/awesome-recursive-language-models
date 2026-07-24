@@ -40,10 +40,12 @@ same gates plus APM and AgentRC readiness steps.
 
 Belongs — recursion must be **central** to the method, architecture, inference process,
 evaluation design, agent loop, or self-improvement mechanism:
+
 - self-recursive inference, tree/graph recursion, iterative refinement, recursive
   architectures, recursive retrieval, recursive self-improvement, simulation recursion.
 
 Does **not** belong:
+
 - generic LLM or prompt-engineering resources;
 - RAG where recursive retrieval/summarisation/decomposition is not central;
 - broad agent lists/frameworks without recursive planning, reflection, self-correction, or
@@ -128,6 +130,7 @@ strong reason — prefer a prose cross-reference.
 
 Suggestions arrive via the "Suggest a resource" issue form (URL, title, year, proposed
 section, recursion-centrality rationale). To convert one:
+
 1. Re-verify the link, title, year, and recursion centrality independently of the form.
 2. Check the time window and search for duplicates.
 3. Draft the entry in canonical format and place it in the proposed/most-fitting section.
@@ -159,5 +162,3 @@ genuinely need the contributor.
 
 Warm, concise, respectful, low-friction. Thank contributors, be specific about what's
 needed and why, link the exact rule in `CONTRIBUTING.md`. Prefer fixing it yourself over asking.
-
-
