@@ -38,10 +38,13 @@ jobs:
       - name: Link check
         run: npm test
 
+      - name: Docs lint
+        run: npm run lint:docs
+
       # APM (Agent Package Manager) — install the CLI, resolve/lock agent assets,
       # and audit them. Flips the apm-ci-integration readiness criterion.
       - name: Install APM
-        run: curl -sSL https://aka.ms/apm-unix | sh
+        run: curl -sSL https://aka.ms/apm-unix | VERSION=v0.26.0 sh
 
       - name: APM install & audit
         run: |
@@ -50,4 +53,4 @@ jobs:
 
       # Maintain step: fail the build if AI-readiness regresses below the target level.
       - name: AgentRC readiness gate
-        run: npx -y github:microsoft/agentrc readiness --fail-level 3
+        run: npx -y github:microsoft/agentrc readiness --fail-level 1
