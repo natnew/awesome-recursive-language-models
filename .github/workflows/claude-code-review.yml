@@ -12,6 +12,11 @@ on:
 
 jobs:
   claude-review:
+    # claude-code-action rejects runs initiated by a non-human actor, so on bot
+    # PRs (Dependabot and friends) the job can only ever fail. Skip it instead:
+    # a skipped job reports neutral and leaves the PR mergeable.
+    if: github.event.pull_request.user.type != 'Bot'
+
     # Optional: Filter by PR author
     # if: |
     #   github.event.pull_request.user.login == 'external-contributor' ||
