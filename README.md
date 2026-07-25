@@ -162,10 +162,10 @@ See STOP in the core papers for recursively self-improving code-generation scaff
 
 ### We love Contributors
 
-Thrilled to have you here. <br>
+Thrilled to have you here. <br />
 Whether it's a quick typo fix, a fresh resource,
 a doc polish, or a sweeping overhaul — every contribution helps this list grow.
-Jump in and join the community — PRs of every size are welcome.<br>
+Jump in and join the community — PRs of every size are welcome.<br />
 
 [Read the contributing guide](CONTRIBUTING.md) [good first issues](https://github.com/natnew/awesome-recursive-language-models/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22)
 
