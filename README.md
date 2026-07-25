@@ -100,6 +100,7 @@ See Tree of Thoughts in the core papers for the canonical tree-search framing.
 - [CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing](https://arxiv.org/abs/2305.11738) - Validates and progressively revises model outputs through an iterative loop of tool-based critique and correction. (2023)
 - [Generative Verifiers: Reward Modeling as Next-Token Prediction](https://arxiv.org/abs/2408.15240) - Trains verifiers as generators so that verification can itself use chain-of-thought reasoning and majority voting. (2024)
 - [Agent-as-a-Judge: Evaluate Agents with Agents](https://arxiv.org/abs/2410.10934) - Uses agentic systems to evaluate other agents with intermediate feedback across the whole task-solving trajectory. (2024)
+- [SciReasoner](https://scireasoner.github.io/) - Uses addressable protein, molecular, and crystal-structure tokens as inspectable evidence units for transparent structure-property reasoning. (2026)
 
 ## Recursive Planning and Search
 
