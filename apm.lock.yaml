@@ -21,4 +21,4 @@ resolved:
     - path: .github/skills/awesome-lint
   mcp:
     - path: .vscode/mcp.json
-dependencies: {}
+dependencies: []
