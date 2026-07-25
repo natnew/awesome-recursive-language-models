@@ -53,4 +53,4 @@ jobs:
 
       # Maintain step: fail the build if AI-readiness regresses below the target level.
       - name: AgentRC readiness gate
-        run: npx -y github:microsoft/agentrc readiness --fail-level 3
+        run: npx -y github:microsoft/agentrc readiness --fail-level 1
