@@ -55,6 +55,7 @@ See the core papers above for recursive self-invocation and multi-context recurs
 - [RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval](https://arxiv.org/abs/2401.18059) - Builds a recursive tree of clustered summaries so retrieval can operate over both local chunks and higher-level abstractions. (2024)
 - [Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions](https://arxiv.org/abs/2212.10509) - Interleaves retrieval and chain-of-thought steps so each retrieval depends on previously derived reasoning in a mutually recursive loop. (2022)
 - [Recursive Language Models Meet Uncertainty: The Surprising Effectiveness of Self-Reflective Program Search for Long Context](https://arxiv.org/abs/2603.15653) - Studies when recursion actually helps RLM-style long-context inference and shows uncertainty-guided self-reflective program search can match or exceed recursive self-calls. (2026)
+- [Jet-Long: Efficient Long-Context Extension with Dynamic Bifocal RoPE](https://arxiv.org/abs/2607.07740) - Provides a tuning-free RoPE extension for preserving short-context behaviour while scaling accumulated traces in recursive and repository-scale workflows. (2026)
 
 ## Recursive Reasoning Architectures
 
