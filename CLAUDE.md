@@ -1,102 +1,164 @@
 # CLAUDE.md
 
-Claude Code operating notes for this repository. [`AGENTS.md`](AGENTS.md) is the source of
-truth for agent behaviour and [`CONTRIBUTING.md`](CONTRIBUTING.md) for inclusion rules; this
-file routes to them and adds only what they do not cover. If they disagree, follow them and
-fix this file.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Orientation
+## What this repository is
 
-- Documentation-only awesome list. The deliverable is `README.md`; there is no application
-  code, runtime, or secrets. npm scripts are validation tooling only.
-- Typical tasks: add/review entries, triage issues and PRs, fix links, audit taxonomy,
-  maintain agent guidance and tooling config.
-- The README `## Contents` and `## Taxonomy` table are the live section map and placement
-  rubric. Do not rely on a copied section list.
+A curated, **documentation-only "awesome list"**. The deliverable is `README.md`: a
+high-signal set of resources on recursive language models, recursive inference, recursive
+reasoning architectures, self-calling AI systems, and learned simulation engines for
+society. There is **no application code and no runtime** — the only executables are dev
+tools that lint and validate the list. `AGENTS.md` and `CONTRIBUTING.md` are the source of
+truth for curation rules; keep this file consistent with them.
 
-## Where to look
+Your job here is maintainer support: README upkeep, PR review, issue triage, link/quality
+checks, section placement, duplicate detection, and short, friendly maintainer comments.
 
-| Task                                         | Read first                                                                                                                                        |
-| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Add or edit an entry                         | `CONTRIBUTING.md`, [add-entry skill](.github/skills/add-entry/SKILL.md), target README section and neighbours                                     |
-| Vet or review entries (PR/issue)             | [entry-reviewer](.github/agents/entry-reviewer.agent.md), [PR template](.github/PULL_REQUEST_TEMPLATE.md) checklist                               |
-| Discover candidates                          | [paper-scout](.github/agents/paper-scout.agent.md)                                                                                                |
-| Placement, duplicates, coverage              | [taxonomy-auditor](.github/agents/taxonomy-auditor.agent.md), [coverage-report skill](.github/skills/coverage-report/SKILL.md)                    |
-| Failing link or awesome-lint check           | [link-check](.github/skills/link-check/SKILL.md), [awesome-lint](.github/skills/awesome-lint/SKILL.md)                                            |
-| Tooling, CI, agent packaging                 | `package.json`, `.prettierignore`, `.markdownlint-cli2.jsonc`, [CI](.github/workflows/ci.yml), `apm.yml`                                          |
-| Issue intake                                 | [`.github/ISSUE_TEMPLATE/`](.github/ISSUE_TEMPLATE/) (suggest-resource, broken-link)                                                              |
+Work **alongside** the repository's agent-assisted curation pipeline (`paper-scout`,
+`curate-entry`, `entry-reviewer`, `taxonomy-auditor` — see `README.md`), not as an
+uncontrolled autonomous updater: review entries like `entry-reviewer`, format and place
+them like `curate-entry`, check section health and duplicates like `taxonomy-auditor`, and
+keep final decisions aligned with maintainer judgement.
 
-The `.github/agents/*.agent.md` files are APM/Copilot-format role briefs, not Claude Code
-subagent definitions. Follow them as procedures. For a batch of several independent
-candidates, verifying each in a parallel subagent briefed with the relevant agent file is
-reasonable; a single entry does not need it.
+## Validation commands
 
-## Invariants
-
-- Entry format, one unwrapped line: `- [Exact page title](URL) - One neutral sentence. (Year)`.
-- Recursion must be central to the resource; window starts **15 May 2022**; prefer the most
-  primary source. Details: `CONTRIBUTING.md` (Inclusion Criteria, Time-Window Rule, Source
-  Hierarchy, Out-of-Scope).
-- **Never fabricate** titles, authors, venues, years, benchmarks, or results. Verify from
-  the opened source; search snippets and issue-form metadata are leads, not evidence. If a
-  required fact is unverifiable, leave the entry out and say what is missing.
-- Search the whole README (title, project, arXiv id, repo name, abbreviation, prose
-  cross-references) before adding. Prefer a prose cross-reference to a second listing.
-- Minimal diffs. Never reflow `README.md`, `CONTRIBUTING.md`, or `CLAUDE.md` (all
-  Prettier-ignored); never run `npm run format` over them.
-- When a heading changes, keep Contents, anchors, and cross-references in sync.
-- Do not widen linkinator skips, disable lint rules, or remove a resource because of a
-  transient 403/429/timeout. Retry and inspect first.
-- Keep `package.json`/`package-lock.json` consistent; update `apm.yml` if shipped agent or
-  skill paths change. Do not commit ignored root-level `agents/`, `skills/`, `reports/`, etc.
-
-## Validation
-
-Node 22, from the repo root. CI runs all of these, then APM audit and an AgentRC readiness
-gate that are not reproducible with npm alone:
+Run these before approving or committing any change to `README.md`:
 
 ```bash
-npm ci
-npm run build          # Prettier check (not a build)
-npm run lint           # markdownlint; excludes README.md and CONTRIBUTING.md
-npm run lint:awesome   # awesome-lint on README.md
-npm test               # linkinator on README links; skips this repo's own URLs
-npm run lint:docs      # remark on the five root docs, including this file
+npm ci                 # install dev tooling from the lockfile
+npm run build          # prettier --check (formatting gate; curated docs are excluded)
+npm run lint           # markdownlint-cli2 over all Markdown
+npm run lint:awesome   # awesome-lint compliance for README.md
+npm test               # linkinator: verify every README.md link resolves
 ```
 
-Known baseline noise, which should be reported rather than "fixed":
+`npm run format` rewrites with Prettier — do **not** run it against `README.md` /
+`CONTRIBUTING.md` (they are hand-curated and excluded by `.prettierignore`). CI runs the
+same gates plus APM and AgentRC readiness steps.
 
-- `lint:docs` exits 0 with many `list-item-indent` warnings (Remark vs Prettier conflict).
-  Check only that your change adds no new diagnostics.
-- In sandboxed or offline sessions, `lint:awesome` can fail with `Awesome list must reside
-  in a valid git repository` (the `awesome-github` rule needs GitHub access), and `npm test`
-  can hit network errors. Record these as environment-limited, not as passing.
+## What belongs / what does not
 
-Automated checks cannot verify relevance, titles, years, or claims. That remains manual.
+Belongs — recursion must be **central** to the method, architecture, inference process,
+evaluation design, agent loop, or self-improvement mechanism:
 
-## Triage dispositions
+- self-recursive inference, tree/graph recursion, iterative refinement, recursive
+  architectures, recursive retrieval, recursive self-improvement, simulation recursion.
 
-For PRs and suggestion issues, verify each entry independently of the submitter's claims,
-then choose one:
+Does **not** belong:
 
-- **Accept**: verified, in scope, correctly formatted and placed, no duplicate, checks pass.
-- **Edit as maintainer**: qualifies but has small issues (wording, year, format, section,
-  promotional/ranking/time-sensitive phrasing). Fix it directly and note what changed.
-- **Request changes**: only the contributor can resolve it (unclear relevance,
-  non-authoritative source, claims not matched to the page).
-- **Close**: out of scope, unverifiable, duplicate, or outside the window. Link the rule.
-- **Park**: borderline recursion-centrality, unclear placement, or needs a new section.
-  Do not force it into the README; state exactly what is blocking.
+- generic LLM or prompt-engineering resources;
+- RAG where recursive retrieval/summarisation/decomposition is not central;
+- broad agent lists/frameworks without recursive planning, reflection, self-correction, or
+  tool-use loops;
+- unverified blogs, newsletters, social-media summaries;
+- broken links, or anything whose date/claims can't be matched to the source.
 
-Maintainer comments should be warm, brief, and specific, and should link the relevant
-`CONTRIBUTING.md` section. The final decision rests with the human maintainer (`@natnew`,
-per CODEOWNERS).
+## Awesome-list quality standards
 
-## Done means
+- A smaller set of well-verified resources beats broad coverage with weak relevance.
+- **Time window:** resources from **15 May 2022 onwards**, unless clearly marked as
+  historical context.
+- **Source hierarchy** (prefer the most authoritative): arXiv / conference page → official
+  project page → official GitHub repo → official docs → author/lab page → high-quality
+  secondary explanation only when it adds clear value. Prefer official sources, papers,
+  repos, datasets, docs, and durable project pages over thin wrapper pages.
 
-- `git diff --check` is clean and the diff has only intended changes, with no encoding or
-  line-ending damage and local links that exist with correct case.
-- The response or PR includes an evidence note per entry (source URL, verified title/date,
-  recursive mechanism, placement, duplicate-search result) and the actual outcome of each
-  check, including those skipped or blocked.
-- PRs use the PR template; drop its entry checklist when entries are untouched.
+## README formatting rules
+
+- Entry format, exactly: `- [Title](URL) - One concise sentence. (Year)`
+  - Single hyphen separator with surrounding spaces; sentence ends with a period; year in
+    parentheses at the very end.
+- Title matches the linked page exactly. Year is verified from the page itself.
+- Sections within a topic are bullet lists; cross-references to other sections are short
+  prose lines (e.g. "See Tree of Thoughts in the core papers…"), not duplicate entries.
+- Keep diffs minimal and scoped to the entries touched. Never reflow or reformat the whole
+  README.
+
+## Link quality rules
+
+- Open the link; confirm it loads and the on-page title matches the entry title.
+- Confirm it's the intended primary resource, not a secondary summary (unless no primary
+  source exists, in which case list the primary too).
+- The linkinator test skips internal `github.com/natnew/...` links by design; still
+  sanity-check those manually.
+
+## Neutral description style
+
+State what the resource is and why it matters for recursion. Avoid vague praise,
+exaggerated importance, and unsupported claims. Remove or neutralise **promotional,
+time-sensitive, ranking, pricing, or unsupported** language. Never invent venues, authors,
+dates, benchmarks, or results, and don't copy abstracts without checking relevance.
+
+**Do not fabricate.** Never add or modify a paper, repo, benchmark, author, year, venue,
+result, claim, or implementation detail unless it can be verified from the linked source or
+another authoritative project source. If a detail can't be verified, leave it out and flag
+it rather than guessing.
+
+## Section placement
+
+Current taxonomy sections (see the README `## Contents`): Core Papers · Recursive Language
+Models · Recursive Reasoning Architectures · Inference-Time Recursion · Recursive Agents
+and Tool Environments · Recursive Evaluation and Verification · Recursive Planning and
+Search · RL and Self-Improving Systems · Simulation Recursion and Social Simulation ·
+Benchmarks and Evaluation Tasks · Open-Source Implementations.
+
+- Place by the dominant recursive mechanism. Papers → topical section or Core Papers;
+  code → Open-Source Implementations; datasets/tasks → Benchmarks and Evaluation Tasks.
+- If placement is genuinely unclear, propose a section in the PR/issue rather than guessing.
+
+**When unsure, don't force it.** If recursion-centrality, source authority, section
+placement, or eligibility is genuinely borderline, do not push the entry into the README.
+Park the issue/PR, leave a brief maintainer note explaining exactly what's uncertain, and
+ask for maintainer review instead of guessing. Keep the note friendly and low-friction.
+
+## Duplicate checking
+
+Before accepting an entry, search the README for the **title, project name, arXiv id, repo
+name, and common abbreviation**. Don't list the same work in multiple sections without a
+strong reason — prefer a prose cross-reference.
+
+## PR triage workflow
+
+1. Read the PR description and the entry checklist in `PULL_REQUEST_TEMPLATE.md`.
+2. Verify each entry: relevance (recursion central), source authority, title/year match,
+   time window, format, placement, no duplicate.
+3. Confirm the diff is minimal and the README wasn't reflowed.
+4. Confirm `npm run lint`, `npm run lint:awesome`, and `npm test` pass (or run them).
+5. Decide using the disposition guide below.
+
+## Issue-to-entry workflow
+
+Suggestions arrive via the "Suggest a resource" issue form (URL, title, year, proposed
+section, recursion-centrality rationale). To convert one:
+
+1. Re-verify the link, title, year, and recursion centrality independently of the form.
+2. Check the time window and search for duplicates.
+3. Draft the entry in canonical format and place it in the proposed/most-fitting section.
+4. Validate, then open the PR (or apply directly if it's a small safe fix — see below).
+
+## Disposition guide
+
+- **Accept as-is** — entry is relevant, verified, correctly formatted and placed, no
+  duplicate, checks pass.
+- **Edit as maintainer** — the resource qualifies but has small fixable issues (wording,
+  year, formatting, section, neutralising promo language). Make the fix directly rather
+  than asking the contributor for trivial edits; note what you changed.
+- **Request changes** — substantive problems only a contributor can resolve: relevance is
+  unclear, source isn't authoritative, claims can't be matched to the page.
+- **Close** — out of scope, unverifiable, duplicate, or outside the time window with no
+  historical-context justification. Explain briefly and kindly; link the relevant rule.
+- **Park** — promising but needs discussion (e.g. a new section, borderline relevance).
+  Label/leave open with a clear note on what's blocking.
+
+## Maintainer authority
+
+Small, safe fixes may be made **directly** by the maintainer — typos, year corrections,
+formatting, section moves, trimming promotional/time-sensitive/ranking/pricing/unsupported
+phrasing — instead of round-tripping with the contributor for unnecessary edits. Always
+neutralise such phrasing before an entry lands. Reserve change requests for issues that
+genuinely need the contributor.
+
+## Contributor communication style
+
+Warm, concise, respectful, low-friction. Thank contributors, be specific about what's
+needed and why, link the exact rule in `CONTRIBUTING.md`. Prefer fixing it yourself over asking.
